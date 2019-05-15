@@ -296,7 +296,7 @@
             Indicates if the dialog session has ended.  Once ended no further method calls will be permitted.
             </summary>
             <remarks>
-            Client code cannot set this directly, this is internally managed.  To end the dicalog session use <see cref="M:MaterialDesignThemes.Wpf.DialogSession.Close"/>.
+            Client code cannot set this directly, this is internally managed.  To end the dialog session use <see cref="M:MaterialDesignThemes.Wpf.DialogSession.Close"/>.
             </remarks>
         </member>
         <member name="P:MaterialDesignThemes.Wpf.DialogSession.Content">
@@ -306,7 +306,7 @@
         </member>
         <member name="M:MaterialDesignThemes.Wpf.DialogSession.UpdateContent(System.Object)">
             <summary>
-            Update the currrent content in the dialog.
+            Update the current content in the dialog.
             </summary>
             <param name="content"></param>
         </member>
@@ -428,6 +428,11 @@
             Identifier which is used in conjunction with <see cref="M:MaterialDesignThemes.Wpf.DialogHost.Show(System.Object)"/> to determine where a dialog should be shown.
             </summary>
         </member>
+        <member name="P:MaterialDesignThemes.Wpf.DialogHost.CurrentSession">
+            <summary>
+            Returns a DialogSession for the currently open dialog for managing it programmatically. If no dialog is open, CurrentSession will return null
+            </summary>
+        </member>
         <member name="P:MaterialDesignThemes.Wpf.DialogHost.OpenDialogCommandDataContextSource">
             <summary>
             Defines how a data context is sourced for a dialog if a <see cref="T:System.Windows.FrameworkElement"/>
@@ -538,6 +543,21 @@
             </summary>
             <param name="element">The element.</param>
             <param name="value">The value.</param>
+        </member>
+        <member name="F:MaterialDesignThemes.Wpf.HintAssist.ForegroundProperty">
+            <summary>
+            The color for the text of a focused control.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.HintAssist.GetForeground(System.Windows.DependencyObject)">
+            <summary>
+            Gets the color for the text of a focused control.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.HintAssist.SetForeground(System.Windows.DependencyObject,System.Windows.Media.Brush)">
+            <summary>
+            Sets the color for the text of a focused control.
+            </summary>
         </member>
         <member name="T:MaterialDesignThemes.Wpf.Icon">
             <summary>
@@ -950,13 +970,6 @@
             </summary>
             <remarks>Not a dprop, as is only applied once.</remarks>
         </member>
-        <member name="M:MaterialDesignThemes.Wpf.MaterialDateDisplay.GetDateFormat(System.Globalization.CultureInfo)">
-            <summary>
-            Ripped straight from .Net FX.
-            </summary>
-            <param name="culture"></param>
-            <returns></returns>
-        </member>
         <member name="T:MaterialDesignThemes.Wpf.PackIcon">
             <summary>
             Icon from the Material Design Icons project, <see cref="!:https://materialdesignicons.com/"/>.
@@ -1067,6 +1080,11 @@
         <member name="T:MaterialDesignThemes.Wpf.PopupBox">
             <summary>
             Popup box, similar to a <see cref="T:System.Windows.Controls.ComboBox"/>, but allows more customizable content.    
+            </summary>
+        </member>
+        <member name="F:MaterialDesignThemes.Wpf.PopupBox.ClosePopupCommand">
+            <summary>
+            Routed command to be used inside of a popup content to close it.
             </summary>
         </member>
         <member name="P:MaterialDesignThemes.Wpf.PopupBox.ToggleContent">
@@ -1308,6 +1326,21 @@
             Enables a ripple effect on focusing the text box.
             </summary>
         </member>
+        <member name="F:MaterialDesignThemes.Wpf.TextFieldAssist.UnderlineBrushProperty">
+            <summary>
+            The color for highlighting effects on the border of a text box.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.TextFieldAssist.SetUnderlineBrush(System.Windows.DependencyObject,System.Windows.Media.Brush)">
+            <summary>
+            Sets the color for highlighting effects on the border of a text box.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignThemes.Wpf.TextFieldAssist.GetUnderlineBrush(System.Windows.DependencyObject)">
+            <summary>
+            Gets the color for highlighting effects on the border of a text box.
+            </summary>
+        </member>
         <member name="F:MaterialDesignThemes.Wpf.TextFieldAssist.IncludeSpellingSuggestionsProperty">
             <summary>
             Automatically inserts spelling suggestions into the text box context menu.
@@ -1501,6 +1534,11 @@
             </summary>
         </member>
         <member name="F:MaterialDesignThemes.Wpf.ValidationAssist.UsePopupProperty">
+            <summary>
+            The hint property
+            </summary>
+        </member>
+        <member name="F:MaterialDesignThemes.Wpf.ValidationAssist.PopupPlacementProperty">
             <summary>
             The hint property
             </summary>

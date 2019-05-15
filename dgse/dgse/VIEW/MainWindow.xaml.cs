@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace dgse
 {
@@ -20,10 +21,24 @@ namespace dgse
     /// </summary>
     public partial class MainWindow : Window
     {
+        DispatcherTimer myTimer = new DispatcherTimer();
+        DateTime nowtime = new DateTime();
         public MainWindow()
         {
             InitializeComponent();
+            myTimer.Interval = new TimeSpan(0, 0, 1);
+            myTimer.Tick += myTimer_Tick;
+            myTimer.Start();
         }
+
+        void myTimer_Tick(object sender, EventArgs e)
+
+        {
+            nowtime = DateTime.Now;
+            Time_lb.Content = nowtime.ToString("tt hh:mm");
+            Day_lb.Content = nowtime.ToString("yyyy-mm-dd ddd요일");
+        }
+
 
         private void TopBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -32,6 +47,35 @@ namespace dgse
         private void Close_bt_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void DgswSite_bt_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.dgsw.hs.kr");
+        }
+        private void Nas_bt_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://10.64.160.114:5000/");
+        }
+        private void Checking_bt_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://dgsw.meistergo.co.kr/cert/");
+        }
+        private void CodeUp_bt_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://codeup.kr/index.php");
+        }
+        private void Band_bt_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://band.us/home");
+        }
+        private void Classroom_bt_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://classroom.google.com/");
+        }
+        private void Minimode_bt_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
     }
 }

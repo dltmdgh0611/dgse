@@ -28,13 +28,13 @@
                 </LinearGradientBrush>
             </Grid.Background>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
-                <Button Style="{StaticResource MyButton}" x:Name="Minimode_bt"  Width="25" Height="25"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Margin="0,2">
+                <Button Style="{StaticResource MyButton}" x:Name="Minimode_bt"  Width="25" Height="25" BorderBrush="{x:Null}" Foreground="White" Margin="0,2" Click="Minimode_bt_Click" Background="#FF0090FF">
                     <materialDesign:PackIcon x:Name="Minimode_icon" Kind="WindowMinimize"/>
                 </Button>
-                <Button Style="{StaticResource MyButton}" x:Name="Info_bt" Width="25" Height="25"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Margin="0,2">
+                <Button Style="{StaticResource MyButton}" x:Name="Info_bt" Width="25" Height="25"  Background="#FF0090FF" BorderBrush="{x:Null}" Foreground="White" Margin="0,2">
                     <materialDesign:PackIcon x:Name="Info_icon" Kind="InfoOutline"/>
                 </Button>
-                <Button Style="{StaticResource MyButton}" x:Name="Close_bt" Width="25" Height="25"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Margin="0,2,0,0" Click="Close_bt_Click" VerticalAlignment="Top">
+                <Button Style="{StaticResource MyButton}" x:Name="Close_bt" Width="25" Height="25"  Background="#FF0090FF" BorderBrush="{x:Null}" Foreground="White" Margin="0,2,0,0" Click="Close_bt_Click" VerticalAlignment="Top">
                     <materialDesign:PackIcon x:Name="Close_icon" Kind="Close"/>
                 </Button>
             </StackPanel>
@@ -44,7 +44,7 @@
             <StackPanel.Effect>
                 <DropShadowEffect Opacity="0.2"/>
             </StackPanel.Effect>
-            <Button Style="{StaticResource MyButton}" x:Name="DgswSite_bt" Margin="23,30,23,0" BorderBrush="{x:Null}" Height="40">
+            <Button Style="{StaticResource MyButton}" x:Name="DgswSite_bt" Margin="23,30,23,0" BorderBrush="{x:Null}" Height="40" Click="DgswSite_bt_Click">
                 <Button.Effect>
                     <DropShadowEffect Opacity="0.3"/>
                 </Button.Effect>
@@ -68,7 +68,7 @@
                 </Grid>
 
             </Button>
-            <Button Style="{StaticResource MyButton}" x:Name="Nas_bt" Margin="23,20,23,0" BorderBrush="{x:Null}" Height="40">
+            <Button Style="{StaticResource MyButton}" x:Name="Nas_bt" Margin="23,20,23,0" BorderBrush="{x:Null}" Height="40" Click="Nas_bt_Click">
                 <Button.Effect>
                     <DropShadowEffect Opacity="0.3"/>
                 </Button.Effect>
@@ -91,7 +91,7 @@
                     <materialDesign:PackIcon Kind="DatabasePlus" Margin="12,2,0,0" Width="24" Height="24" Foreground="White"/>
                 </Grid>
             </Button>
-            <Button Style="{StaticResource MyButton}" x:Name="Checking_bt" Margin="23,20,23,0" BorderBrush="{x:Null}" Height="40">
+            <Button Style="{StaticResource MyButton}" x:Name="Checking_bt" Margin="23,20,23,0" BorderBrush="{x:Null}" Height="40" Click="Checking_bt_Click">
                 <Button.Effect>
                     <DropShadowEffect Opacity="0.3"/>
                 </Button.Effect>
@@ -114,7 +114,7 @@
                     <materialDesign:PackIcon Kind="WindowRestore" Margin="12,2,0,0" Width="24" Height="24" Foreground="White"/>
                 </Grid>
             </Button>
-            <Button Style="{StaticResource MyButton}" x:Name="CodeUp_bt" Margin="23,20,23,0" BorderBrush="{x:Null}" Height="40">
+            <Button Style="{StaticResource MyButton}" x:Name="CodeUp_bt" Margin="23,20,23,0" BorderBrush="{x:Null}" Height="40" Click="CodeUp_bt_Click">
                 <Button.Effect>
                     <DropShadowEffect Opacity="0.3"/>
                 </Button.Effect>
@@ -137,7 +137,7 @@
                     <materialDesign:PackIcon Kind="CodeBraces" Margin="12,2,0,0" Width="24" Height="24" Foreground="White"/>
                 </Grid>
             </Button>
-            <Button Style="{StaticResource MyButton}" x:Name="Band_bt" Margin="23,20,23,0" BorderBrush="{x:Null}" Height="40">
+            <Button Style="{StaticResource MyButton}" x:Name="Band_bt" Margin="23,20,23,0" BorderBrush="{x:Null}" Height="40" Click="Band_bt_Click">
                 <Button.Effect>
                     <DropShadowEffect Opacity="0.3"/>
                 </Button.Effect>
@@ -160,7 +160,7 @@
                     <materialDesign:PackIcon Kind="Book" Margin="12,2,0,0" Width="24" Height="24" Foreground="White"/>
                 </Grid>
             </Button>
-            <Button Style="{StaticResource MyButton}" x:Name="Classroom_bt" Margin="23,20,23,0" BorderBrush="{x:Null}" Height="40">
+            <Button Style="{StaticResource MyButton}" x:Name="Classroom_bt" Margin="23,20,23,0" BorderBrush="{x:Null}" Height="40" Click="Classroom_bt_Click">
                 <Button.Effect>
                     <DropShadowEffect Opacity="0.3"/>
                 </Button.Effect>
@@ -235,7 +235,7 @@
                     <Label Content="2-3" Margin="608,19,97,0" VerticalAlignment="Top" FontFamily="NanumSquareRound Light" FontSize="28"/>
                 </Grid>
                 <Grid HorizontalAlignment="Left" Height="585" VerticalAlignment="Top" Width="766" Grid.Column="1">
-                   
+
                 </Grid>
             </StackPanel>
         </ScrollViewer>
