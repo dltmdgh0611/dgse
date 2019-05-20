@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dgse"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d" WindowStyle="None" ResizeMode="NoResize"
         Height="600" Width="1024">
@@ -13,6 +14,11 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid x:Name="TopBar" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="1024" Grid.ColumnSpan="2">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseLeftButtonDown" >
+                    <i:InvokeCommandAction Command="{Binding Bar_Move}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                     <LinearGradientBrush.RelativeTransform>
@@ -34,7 +40,7 @@
                 <Button Style="{StaticResource MyButton}" x:Name="Info_bt" Width="25" Height="25"  Background="#FF0090FF" BorderBrush="{x:Null}" Foreground="White" Margin="0,2">
                     <materialDesign:PackIcon x:Name="Info_icon" Kind="InfoOutline"/>
                 </Button>
-                <Button Style="{StaticResource MyButton}" x:Name="Close_bt" Width="25" Height="25"  Background="#FF0090FF" BorderBrush="{x:Null}" Foreground="White" Margin="0,2,0,0" VerticalAlignment="Top">
+                <Button Style="{StaticResource MyButton}" x:Name="Close_bt" Width="25" Height="25"  Background="#FF0090FF" BorderBrush="{x:Null}" Foreground="White" Margin="0,2,0,0" VerticalAlignment="Top" Command="{Binding Bt_Close}">
                     <materialDesign:PackIcon x:Name="Close_icon" Kind="Close"/>
                 </Button>
             </StackPanel>
@@ -212,7 +218,7 @@
 
                         <Label Content="석식" HorizontalAlignment="Left" Margin="47,15,0,0" VerticalAlignment="Top" Foreground="#FF0090FF" FontFamily="NanumSquareRound Regular" FontSize="20" FontStretch="Condensed"/>
                         <TextBlock x:Name="dinner_block" HorizontalAlignment="Left" Margin="13,48,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="133" Width="216" TextAlignment="Center"/>
-                        <Image Margin="15,15,192,149" Source="C:\dgse\dgse\dgse\dgse\restaurant.png" Stretch="Fill" Width="32" Height="32"/>
+                        <Image Margin="15,15,192,149" Stretch="Fill" Width="32" Height="32"/>
 
                     </Grid>
                     <Grid Margin="264,169,263,10">
@@ -220,7 +226,7 @@
 
                         <Label Content="중식" HorizontalAlignment="Left" Margin="47,15,0,0" VerticalAlignment="Top" Foreground="#FF0090FF" FontFamily="NanumSquareRound Regular" FontSize="20" FontStretch="Condensed"/>
                         <TextBlock x:Name="lunch_block" HorizontalAlignment="Left" Margin="13,48,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="133" Width="216" TextAlignment="Center"/>
-                        <Image Margin="16,15,191,149" Source="C:\dgse\dgse\dgse\dgse\sandwich.png" Stretch="Fill" Width="32" Height="32"/>
+                        <Image Margin="16,15,191,149" Stretch="Fill" Width="32" Height="32"/>
 
                     </Grid>
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dgse.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,8 +25,7 @@ namespace dgse
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainViewModel(this);
         }
-
-        
     }
 }
