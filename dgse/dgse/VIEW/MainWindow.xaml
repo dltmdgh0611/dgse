@@ -13,7 +13,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid x:Name="TopBar" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="1024" Grid.ColumnSpan="2" MouseDown="TopBar_MouseDown">
-            <Grid.Background>   
+            <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                     <LinearGradientBrush.RelativeTransform>
                         <TransformGroup>

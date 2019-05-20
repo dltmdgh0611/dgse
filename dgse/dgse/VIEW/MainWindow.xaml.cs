@@ -36,7 +36,7 @@ namespace dgse
         {
             nowtime = DateTime.Now;
             Time_lb.Content = nowtime.ToString("tt hh:mm");
-            Day_lb.Content = nowtime.ToString("yyyy-MM-dd ddd요일");
+            Day_lb.Content = nowtime.ToString("yyyy-mm-dd ddd요일");
         }
 
 
