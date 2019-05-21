@@ -69,3 +69,5 @@ C:\Users\stck6\Desktop\dgse\dgse\dgse\bin\Debug\Microsoft.Expression.Prototyping
 C:\Users\stck6\Desktop\dgse\dgse\dgse\bin\Debug\Microsoft.Expression.Prototyping.SketchControls.dll
 C:\Users\stck6\Desktop\dgse\dgse\dgse\bin\Debug\Microsoft.SDK.Expression.Blend.dll
 C:\Users\stck6\Desktop\dgse\dgse\dgse\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\stck6\Desktop\dgse\dgse\dgse\bin\Debug\Newtonsoft.Json.dll
+C:\Users\stck6\Desktop\dgse\dgse\dgse\bin\Debug\Newtonsoft.Json.xml

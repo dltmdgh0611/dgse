@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dgse.MODEL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -14,14 +15,30 @@ namespace dgse.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+        
         protected Window mainViewModel;
 
-        protected ICommand bt_close;
+        public Meal meal;
+
+        /// <summary>
+        /// 윈도우 종료
+        /// </summary>
+        public abstract void Close();
+
+        /// <summary>
+        /// 윈도우 잡고 이동
+        /// </summary>
+        public abstract void Move();
 
 
-        public ICommand Bt_Close;
 
-        public abstract void close();
 
     }
 

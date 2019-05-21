@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dgse.MODEL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -15,34 +16,43 @@ namespace dgse.ViewModel
         public MainViewModel(Window mainViewModel)
         {
             base.mainViewModel = mainViewModel;
+            meal = new Meal();
+            meal.Get_Meal_Date(new DateTime());
         }
+
+        public override void Move()
+        {
+            base.mainViewModel.DragMove();
+        }
+
+        public override void Close()
+        {
+            mainViewModel.Close();
+        }
+
 
         public ICommand Bt_Close
         {
             get
             {
-                return bt_close = new DelegateCommand(close);
+                return new DelegateCommand(Close);
             }
         }
-
-        public override void close()
-        {
-            mainViewModel.Close();
-        }
-
-        private ICommand bar_move;
 
         public ICommand Bar_Move
         {
             get
             {
-                return bar_move = new DelegateCommand(move);
+                return new DelegateCommand(Move);
             }
         }
 
-        public void move()
+        public string morning
         {
-            base.mainViewModel.DragMove();
+            get
+            {
+                return meal.breakfast;
+            }
         }
 
     }

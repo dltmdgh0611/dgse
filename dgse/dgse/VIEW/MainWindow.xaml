@@ -210,7 +210,7 @@
 
                         <Label Content="조식" HorizontalAlignment="Left" Margin="47,15,0,0" VerticalAlignment="Top" Foreground="#FF0090FF" FontFamily="NanumSquareRound Regular" FontSize="20" FontStretch="Condensed"/>
                         <Image Margin="6,6,196,142" Source="C:\dgse\dgse\dgse\dgse\Resource\Icon\milk.png" Stretch="Fill" Width="48" Height="48"/>
-                        <TextBlock x:Name="blackfast_block" HorizontalAlignment="Left" Margin="13,48,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="133" Width="216" TextAlignment="Center"/>
+                        <TextBlock x:Name="blackfast_block" HorizontalAlignment="Left" Margin="13,48,0,0" TextWrapping="Wrap" Text="{Binding morning}" VerticalAlignment="Top" Height="133" Width="216" TextAlignment="Center"/>
 
                     </Grid>
                     <Grid Margin="517,169,10,10">
