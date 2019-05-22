@@ -210,14 +210,14 @@
 
                         <Label Content="조식" HorizontalAlignment="Left" Margin="47,15,0,0" VerticalAlignment="Top" Foreground="#FF0090FF" FontFamily="NanumSquareRound Regular" FontSize="20" FontStretch="Condensed"/>
                         <Image Margin="6,6,196,142" Source="C:\dgse\dgse\dgse\dgse\Resource\Icon\milk.png" Stretch="Fill" Width="48" Height="48"/>
-                        <TextBlock x:Name="blackfast_block" HorizontalAlignment="Left" Margin="13,48,0,0" TextWrapping="Wrap" Text="{Binding morning}" VerticalAlignment="Top" Height="133" Width="216" TextAlignment="Center"/>
+                        <TextBlock x:Name="blackfast_block" HorizontalAlignment="Left" Margin="13,48,0,0" TextWrapping="Wrap" Text="{Binding morning, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="133" Width="216" TextAlignment="Center" />
 
                     </Grid>
                     <Grid Margin="517,169,10,10">
                         <Rectangle Fill="#CCF4F4F5" Height="196" VerticalAlignment="Top" RadiusX="20" RadiusY="20"/>
 
                         <Label Content="석식" HorizontalAlignment="Left" Margin="47,15,0,0" VerticalAlignment="Top" Foreground="#FF0090FF" FontFamily="NanumSquareRound Regular" FontSize="20" FontStretch="Condensed"/>
-                        <TextBlock x:Name="dinner_block" HorizontalAlignment="Left" Margin="13,48,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="133" Width="216" TextAlignment="Center"/>
+                        <TextBlock x:Name="dinner_block" HorizontalAlignment="Left" Margin="13,48,0,0" TextWrapping="Wrap" Text="{Binding dinner}" VerticalAlignment="Top" Height="133" Width="216" TextAlignment="Center"/>
                         <Image Margin="15,15,192,149" Stretch="Fill" Width="32" Height="32"/>
 
                     </Grid>
@@ -225,7 +225,7 @@
                         <Rectangle Fill="#CCF4F4F5" Height="196" VerticalAlignment="Top" RadiusX="20" RadiusY="20"/>
 
                         <Label Content="중식" HorizontalAlignment="Left" Margin="47,15,0,0" VerticalAlignment="Top" Foreground="#FF0090FF" FontFamily="NanumSquareRound Regular" FontSize="20" FontStretch="Condensed"/>
-                        <TextBlock x:Name="lunch_block" HorizontalAlignment="Left" Margin="13,48,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="133" Width="216" TextAlignment="Center"/>
+                        <TextBlock x:Name="lunch_block" HorizontalAlignment="Left" Margin="13,48,0,0" TextWrapping="Wrap" Text="{Binding lunch}" VerticalAlignment="Top" Height="133" Width="216" TextAlignment="Center"/>
                         <Image Margin="16,15,191,149" Stretch="Fill" Width="32" Height="32"/>
 
                     </Grid>

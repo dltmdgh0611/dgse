@@ -4,28 +4,21 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
 namespace dgse.ViewModel
 {
-    abstract class ViewModel : INotifyPropertyChanged
+    abstract class ViewModel
     {
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
         
         protected Window mainViewModel;
 
         public Meal meal;
+
+        public Thread meal_thread;
 
         /// <summary>
         /// 윈도우 종료
