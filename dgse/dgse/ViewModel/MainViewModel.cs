@@ -21,12 +21,18 @@ class MainViewModel : INotifyPropertyChanged
 
     public Thread meal_thread;
 
-    public  void OnPropertyChanged(string propertyName)
+    public void OnPropertyChanged(string propertyName,Object obj)
     {
         if (PropertyChanged != null)
         {
-            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged(obj, new PropertyChangedEventArgs(propertyName));
         }
+    }
+
+    public void asd(String n)
+    {
+        Debug.WriteLine("call3");
+        OnPropertyChanged(n,this);
     }
 
     public MainViewModel()
@@ -35,10 +41,10 @@ class MainViewModel : INotifyPropertyChanged
     public MainViewModel(Window mainViewModel)
     {
 
-        mainViewModel = mainViewModel;
+        this.mainViewModel = mainViewModel;
 
         meal = new Meal();
-        meal_thread = new Thread(new ThreadStart(Meal_Get));
+        meal_thread = new Thread(new ThreadStart(meal.Meal_Init));
         meal_thread.Start();
     }
 
@@ -78,31 +84,11 @@ class MainViewModel : INotifyPropertyChanged
         }
     }
 
-    public string lunch
+    public void run()
     {
-        get
-        {
-            return meal.Meal_Get(1);
-        }
-    }
-
-    public string dinner
-    {
-        get
-        {
-            return meal.Meal_Get(2);
-        }
-    }
-
-    public void Meal_Get()
-    {
-        meal.Get_Meal_Json();
-        meal.Parse_Meal(meal.meal_arr);
-        for (int i = 0; i < 3; i++)
-        {
-            meal.meal[i] = string.Join("\n", meal.meal_arr[i]);
-        }
-        OnPropertyChanged("morning");
+        Thread.Sleep(1000);
+        Debug.WriteLine("call1");
+        OnPropertyChanged("morning",this);
     }
 
 }

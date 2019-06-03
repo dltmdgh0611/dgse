@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace dgse.MODEL
 {
@@ -23,8 +24,14 @@ namespace dgse.MODEL
             "정보를 불러오는 중",
         };
 
-        public void Parse_Meal(string[][] meal)
+        public void Meal_Init()
         {
+
+            WebClient client = new WebClient();
+            client.Encoding = Encoding.UTF8;
+
+           json = client.DownloadString("https://schoolmenukr.ml/api/high/D100000282/?hideAllergy=true&year=2019&month=3&date=27");
+
             if (json != null)
             {
                 JObject jo = JObject.Parse(json);
@@ -33,15 +40,6 @@ namespace dgse.MODEL
                 meal_arr[2] = JsonConvert.DeserializeObject<List<string>>(jo["menu"]["dinner"].ToString()).ToArray();
             }
 
-        }
-
-
-        public string Get_Meal_Json()
-        {
-            WebClient client = new WebClient();
-            client.Encoding = Encoding.UTF8;
-
-            return (json = client.DownloadString("https://schoolmenukr.ml/api/high/D100000282/?hideAllergy=true&year=2019&month=3&date=27"));
         }
 
         public string Meal_Get(int i)
